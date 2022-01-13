@@ -57,9 +57,17 @@ class MainActivity : AppCompatActivity() {
         val Str1 = "You have choosen ${TotalNoWeapons} weapons"
         val Str2 = "The total strength is ${TotalAttack}"
 
+        val ProbList = getProbList(NoWeaponsList,WeaponStrengthList,1)
+        var Average = 0.0
+        val Str3 = StringBuilder()
+        for (n in 0..(ProbList.size-1)) {
+            Str3.append("${n}: "+"%.1f".format(ProbList[n]*100)+"%\n")
+            Average+=ProbList[n]*n
+        }
 
+    var Str4 = "Average attack is "+"%.1f".format(Average)
 
-        binding.BattleStats.text = Str1 + "\n" + Str2
+        binding.BattleStats.text = Str1 + "\n" + Str2 + "\n" + Str3.toString()+ "\n"+Str4
     }
 
 
@@ -98,6 +106,7 @@ fun getProbList(WpnList: List<Int>, WpnPowList: List<Int>, NumCards: Int): List<
             ReturnList[WpnPowList[n]] += Prob
         }
     }
+
 
     return ReturnList
 }
