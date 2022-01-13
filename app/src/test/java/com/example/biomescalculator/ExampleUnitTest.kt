@@ -25,12 +25,12 @@ class ProbabilityStats {
         val WpnPow = mutableListOf(0,1)
 
         var ProbList = getProbList(WpnList,WpnPow,1)
-        val TargetProb = listOf(1.0,0.0)
+        val TargetProb = listOf(1.0)
         assertEquals(TargetProb, ProbList)
     }
     @Test
     fun small_collection3() {
-        val WpnList = mutableListOf(0,1)
+        val WpnList = mutableListOf(1,0)
         val WpnPow = mutableListOf(1,0)
 
         var ProbList = getProbList(WpnList,WpnPow,1)
