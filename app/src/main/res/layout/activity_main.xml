@@ -20,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
-            android:text="Potato"
+            android:text="@string/potato"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Wodden Sword"
+            android:text="@string/wodden_sword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -41,55 +41,73 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Stone Sword"
+            android:text="@string/stone_sword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/weapon2" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/NoWpn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="61dp"
+            android:text="@string/zero"
             app:layout_constraintStart_toEndOf="@+id/weapon1"
             app:layout_constraintTop_toTopOf="@+id/weapon1"
             tools:text="No Potato" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/NoWpn2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/textView"
+            android:text="@string/zero"
+            app:layout_constraintStart_toStartOf="@+id/NoWpn1"
             app:layout_constraintTop_toTopOf="@+id/weapon2"
             tools:text="No Wood" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/NoWpn3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/textView2"
+            android:text="@string/zero"
+            app:layout_constraintStart_toStartOf="@+id/NoWpn2"
             app:layout_constraintTop_toTopOf="@+id/weapon3"
             tools:text="No Stone" />
 
         <Button
-            android:id="@+id/button4"
-            android:layout_width="193dp"
-            android:layout_height="47dp"
-            android:layout_marginBottom="60dp"
-            android:text="Calculate"
+            android:id="@+id/CalculateStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="44dp"
+            android:text="@string/calculate"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.088"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="Reset Weapons"
+            app:layout_constraintBottom_toBottomOf="@+id/CalculateStats"
+            app:layout_constraintStart_toEndOf="@+id/CalculateStats"
+            app:layout_constraintTop_toTopOf="@+id/CalculateStats"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/BattleStats"
         android:layout_width="359dp"
         android:layout_height="218dp"
-        tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="46dp"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Battle stats" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

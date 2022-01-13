@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">BiomesCalculator</string>
+    <string name="potato">Potato</string>
+    <string name="wodden_sword">Wodden Sword</string>
+    <string name="stone_sword">Stone Sword</string>
+    <string name="calculate">Calculate</string>
+    <string name="zero">0</string>
 </resources>
