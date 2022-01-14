@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">BiomesCalculator</string>
     <string name="potato">Potato</string>
-    <string name="wodden_sword">Wodden Sword</string>
+    <string name="wooden_sword">Wooden Sword</string>
     <string name="stone_sword">Stone Sword</string>
     <string name="calculate">Calculate</string>
     <string name="zero">0</string>
-</resources>
+    <string name="ButtonTextSize">10sp</string>
+    <string name="axe">Axe</string>
+    <string name="hoe">Hoe</string>
+    <string name="bow">Bow</string>
+    <string name="dynamite">Dynamite</string>
+    <string name="diamond_sword">Diamond Sword</string>
+    <string name="iron_sword">Iron Sword</string>
+    <string name="reset_weapons">Reset Weapons</string>
+    </resources>
