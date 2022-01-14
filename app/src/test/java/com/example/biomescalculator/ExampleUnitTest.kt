@@ -97,6 +97,15 @@ class ProbabilityStats {
         assertApproxEquals(TargetProb, ProbList)
     }
     @Test
+    fun draw2_aa() {
+        val WpnList = mutableListOf(0,1,1)
+        val WpnPow = mutableListOf(0,1,2)
+
+        var ProbList = getProbList(WpnList,WpnPow,2)
+        val TargetProb = mutableListOf(0.0,0.0,0.0,1.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
     fun draw2_b() {
         val WpnList = mutableListOf(1,1,1)
         val WpnPow = mutableListOf(0,1,2)
@@ -159,6 +168,111 @@ class ProbabilityStats {
 
         var ProbList = getProbList(WpnList,WpnPow,3)
         val TargetProb = mutableListOf(0.0,0.0,0.0,1/2.0,1.0/4,1.0/4)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+
+
+    @Test
+    fun draw_bow1() {
+        val WpnList = mutableListOf(1,1)
+        val WpnPow = mutableListOf(0,1)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(0.5,0.5)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+
+    @Test
+    fun draw_bow2() {
+        val WpnList = mutableListOf(1,2)
+        val WpnPow = mutableListOf(0,1)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(1/3.0,1/3.0,1/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+
+    @Test
+    fun draw_bow3a() {
+        val WpnList = mutableListOf(1,1,1)
+        val WpnPow = mutableListOf(0,1,1)
+        val IsBow = mutableListOf(false,true,false)
+
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(1/3.0,1/2.0,1/6.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow3b() {
+        val WpnList = mutableListOf(1,1,1)
+        val WpnPow = mutableListOf(0,1,2)
+        val IsBow = mutableListOf(false,true,false)
+
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(1/3.0,1/6.0,1/3.0,1/6.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4a() {
+        val WpnList = mutableListOf(2,1)
+        val WpnPow = mutableListOf(0,1)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(1/3.0,2/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4c() {
+        val WpnList = mutableListOf(2,1)
+        val WpnPow = mutableListOf(1,2)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(0.0,2/3.0,0.0,1/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4cc() {
+        val WpnList = mutableListOf(2,1)
+        val WpnPow = mutableListOf(1,2)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(0.0,0.0,1/3.0,0.0,2/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4b() {
+        val WpnList = mutableListOf(2,1)
+        val WpnPow = mutableListOf(0,2)
+        val IsBow = mutableListOf(false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(1/3.0,0.0,2/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+
+    @Test
+    fun draw_bow4() {
+        val WpnList = mutableListOf(1,1,1)
+        val WpnPow = mutableListOf(0,1,2)
+        val IsBow = mutableListOf(false,true,false)
+
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(0.0,0.0,1/3.0,2/3.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow5() {
+        val WpnList = mutableListOf(1,1,1)
+        val WpnPow = mutableListOf(0,1,2)
+        val IsBow = mutableListOf(false,false,true)
+
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(0.0,0.0,1/3.0,2/3.0)
         assertApproxEquals(TargetProb, ProbList)
     }
 

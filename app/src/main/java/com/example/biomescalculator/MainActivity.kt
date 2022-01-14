@@ -79,7 +79,8 @@ class MainActivity : AppCompatActivity() {
             return
         }
         val ProbList = getProbList(NoWeaponsList, WeaponStrengthList, NumCards)
-        val ReverseCumList = generate(ProbList.size, 0.0) //Gernate a list to store the cumulate prob
+        val ReverseCumList =
+            generate(ProbList.size, 0.0) //Gernate a list to store the cumulate prob
         var Average = 0.0
         val Str3 = StringBuilder()
         for (n in (ProbList.size - 1) downTo 0) {
@@ -122,7 +123,10 @@ fun <T> generate(size: Int, value: T): MutableList<T> {
     return (0 until size).map { value }.toMutableList()
 }
 
-fun getProbList(WpnList: List<Int>, WpnPowList: List<Int>, NumCards: Int): MutableList<Double> {
+fun getProbList(
+    WpnList: List<Int>, WpnPowList: List<Int>, NumCards: Int,
+    IsBowList: List<Boolean> = generate(WpnList.size, false)
+): MutableList<Double> {
 
     if (NumCards < 0) {
         throw java.lang.Exception("Cannot draw negative amount of cards")
@@ -155,15 +159,16 @@ fun getProbList(WpnList: List<Int>, WpnPowList: List<Int>, NumCards: Int): Mutab
         val Prob = (1.0 * WpnList[n]) / (TotalNoWeapons)
         if (Prob != 0.0) {
             val Power = WpnPowList[n]
-            if (NumCards == 1) {
-                ReturnList[Power] += Prob
-            } else {
-                val NewWpnList = WpnList.toMutableList()
-                NewWpnList[n] -= 1 //Reduce the new list by one
-                val NewProbList = getProbList(NewWpnList, WpnPowList, NumCards - 1)
-                ReturnList = mergeReturnList(ReturnList, NewProbList, Prob, Power)
-                //throw java.lang.Exception("${NewProbList}")
+
+            val NewWpnList = WpnList.toMutableList()
+            NewWpnList[n] -= 1 //Reduce the new list by one
+            //If the weapon has the bow property, then draw one extra card
+            var NewNumCards = NumCards - 1
+            if (IsBowList[n]) {
+                NewNumCards++
             }
+            val NewProbList = getProbList(NewWpnList, WpnPowList, NewNumCards)
+            ReturnList = mergeReturnList(ReturnList, NewProbList, Prob, Power)
 
 
         }
