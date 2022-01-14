@@ -11,10 +11,8 @@ lateinit var binding: ActivityMainBinding
 private const val TAG = "MainActivity"
 
 val NoWpnButtons = 9
-val NoWeaponsList = generate(NoWpnButtons,0)
-val WeaponStrengthList = listOf(0, 1, 2,3,4,6,2,2,2)
-
-
+val NoWeaponsList = generate(NoWpnButtons, 0)
+val WeaponStrengthList = listOf(0, 1, 2, 2, 2, 2, 3, 4, 6)
 
 
 class MainActivity : AppCompatActivity() {
@@ -33,14 +31,24 @@ class MainActivity : AppCompatActivity() {
         ResetWeapons()
         UpdateWpnText()
 
-//        binding.weapon1.setOnClickListener { AddWeapon(1) }
-//        binding.weapon2.setOnClickListener { AddWeapon(2) }
-        //       binding.weapon3.setOnClickListener { AddWeapon(3) }
-
-//        binding.Reset.setOnClickListener { ResetWeapons() }
-
-//        binding.CalculateStats.setOnClickListener { calculateStats() }
+        SetClickListenders()
     }
+
+    private fun SetClickListenders() {
+        binding.weapon1.setOnClickListener { AddWeapon(1) }
+        binding.weapon2.setOnClickListener { AddWeapon(2) }
+        binding.weapon3.setOnClickListener { AddWeapon(3) }
+        binding.weapon4.setOnClickListener { AddWeapon(4) }
+        binding.weapon5.setOnClickListener { AddWeapon(5) }
+        binding.weapon6.setOnClickListener { AddWeapon(6) }
+        binding.weapon7.setOnClickListener { AddWeapon(7) }
+        binding.weapon8.setOnClickListener { AddWeapon(8) }
+        binding.weapon9.setOnClickListener { AddWeapon(9) }
+
+        binding.Reset.setOnClickListener { ResetWeapons() }
+        binding.CalculateStats.setOnClickListener { calculateStats() }
+    }
+
 
     private fun ResetWeapons() {
         for (x in 0..(NoWpnButtons - 1)) {
@@ -62,29 +70,37 @@ class MainActivity : AppCompatActivity() {
     private fun calculateStats() {
         //Sum the total number of wepons
         val TotalNoWeapons = NoWeaponsList.sum()
-        var TotalAttack = 0
         var NumCards = 3
-        for (x in 0..(NoWpnButtons - 1)) {
-            TotalAttack += NoWeaponsList[x] * WeaponStrengthList[x]
-        }
-        val Str1 = "You have choosen ${TotalNoWeapons} weapons"
-        val Str2 = "The total strength is ${TotalAttack}"
 
-        if (TotalNoWeapons < NumCards ) {
+        val Str1 = "You have choosen ${TotalNoWeapons} weapons"
+
+        if (TotalNoWeapons < NumCards) {
             binding.BattleStats.text = "Too few weapons. You need at least ${NumCards}"
             return
         }
         val ProbList = getProbList(NoWeaponsList, WeaponStrengthList, NumCards)
+        val ReverseCumList = generate(ProbList.size, 0.0) //Gernate a list to store the cumulate prob
         var Average = 0.0
         val Str3 = StringBuilder()
+        for (n in (ProbList.size - 1) downTo 0) {
+            if (n == ((ProbList.size - 1))) {
+                ReverseCumList[n] = ProbList[n]
+            } else {
+                ReverseCumList[n] = ReverseCumList[n + 1] + ProbList[n]
+            }
+        }
         for (n in 0..(ProbList.size - 1)) {
-            Str3.append("${n}: " + "%.1f".format(ProbList[n] * 100) + "%\n")
+            Str3.append(
+                "${n}:     " + "%.0f".format(ProbList[n] * 100) + "%         " + "%.0f".format(
+                    ReverseCumList[n] * 100
+                ) + "%\n"
+            )
             Average += ProbList[n] * n
         }
 
         var Str4 = "Average attack is " + "%.1f".format(Average)
 
-        binding.BattleStats.text = Str1 + "\n" + Str2 + "\n" + Str3.toString() + "\n" + Str4
+        binding.BattleStats.text = Str1 + "\n" + Str4 + "\n" + Str3.toString()
     }
 
 
@@ -112,7 +128,7 @@ fun getProbList(WpnList: List<Int>, WpnPowList: List<Int>, NumCards: Int): Mutab
         throw java.lang.Exception("Cannot draw negative amount of cards")
     }
     if (NumCards == 0) {
-        return generate(1,1.0)
+        return generate(1, 1.0)
     }
 
     if (NumCards > WpnList.sum()) {
@@ -165,7 +181,7 @@ fun mergeReturnList(
     if (TargetList.size < ListAdd.size + IndxShift) {
         //Extend the list so that they are of matching lengths
         val ExtraNeed = ListAdd.size + IndxShift - TargetList.size
-        val ExtraVals=generate(ExtraNeed,0.0)
+        val ExtraVals = generate(ExtraNeed, 0.0)
         TargetList.addAll(ExtraVals)
     }
 

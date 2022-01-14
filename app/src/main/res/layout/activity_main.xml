@@ -79,7 +79,7 @@
             app:layout_constraintVertical_bias="1" />
 
         <Button
-            android:id="@+id/weapon4"
+            android:id="@+id/weapon7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/iron_sword"
@@ -91,7 +91,7 @@
             app:layout_constraintVertical_bias="0.125" />
 
         <Button
-            android:id="@+id/weapon5"
+            android:id="@+id/weapon8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/diamond_sword"
@@ -103,7 +103,7 @@
             app:layout_constraintVertical_bias="0.375" />
 
         <Button
-            android:id="@+id/weapon6"
+            android:id="@+id/weapon9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/dynamite"
@@ -115,7 +115,7 @@
             app:layout_constraintVertical_bias="0.625" />
 
         <Button
-            android:id="@+id/weapon7"
+            android:id="@+id/weapon4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bow"
@@ -127,7 +127,7 @@
             app:layout_constraintVertical_bias="0.125" />
 
         <Button
-            android:id="@+id/weapon8"
+            android:id="@+id/weapon5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -140,7 +140,7 @@
             app:layout_constraintVertical_bias="0.375" />
 
         <Button
-            android:id="@+id/weapon9"
+            android:id="@+id/weapon6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/axe"
