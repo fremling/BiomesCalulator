@@ -13,6 +13,7 @@ private const val TAG = "MainActivity"
 val NoWpnButtons = 9
 val NoWeaponsList = generate(NoWpnButtons, 0)
 val WeaponStrengthList = listOf(0, 1, 2, 2, 2, 2, 3, 4, 6)
+val WeaponBowStat = listOf(false, false, false, true, false, false, false, false, false)
 
 
 class MainActivity : AppCompatActivity() {
@@ -78,7 +79,7 @@ class MainActivity : AppCompatActivity() {
             binding.BattleStats.text = "Too few weapons. You need at least ${NumCards}"
             return
         }
-        val ProbList = getProbList(NoWeaponsList, WeaponStrengthList, NumCards)
+        val ProbList = getProbList(NoWeaponsList, WeaponStrengthList, NumCards,WeaponBowStat)
         val ReverseCumList =
             generate(ProbList.size, 0.0) //Gernate a list to store the cumulate prob
         var Average = 0.0
@@ -167,7 +168,7 @@ fun getProbList(
             if (IsBowList[n]) {
                 NewNumCards++
             }
-            val NewProbList = getProbList(NewWpnList, WpnPowList, NewNumCards)
+            val NewProbList = getProbList(NewWpnList, WpnPowList, NewNumCards,IsBowList)
             ReturnList = mergeReturnList(ReturnList, NewProbList, Prob, Power)
 
 

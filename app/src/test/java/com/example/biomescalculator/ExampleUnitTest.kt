@@ -235,6 +235,34 @@ class ProbabilityStats {
         assertApproxEquals(TargetProb, ProbList)
     }
     @Test
+    fun draw_bow4ca() {
+        val WpnList = mutableListOf(1,1)
+        val WpnPow = mutableListOf(1,2)
+        val IsBow = mutableListOf(false,true)
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(0.0,1/2.0,0.0,1/2.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4cbb() {
+        val WpnList = mutableListOf(2,0)
+        val WpnPow = mutableListOf(1,2)
+        val IsBow = mutableListOf(false,true)
+        var ProbList = getProbList(WpnList,WpnPow,1,IsBow)
+        val TargetProb = mutableListOf(0.0,1.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+    @Test
+    fun draw_bow4cb() {
+        val WpnList = mutableListOf(2,0)
+        val WpnPow = mutableListOf(1,2)
+        val IsBow = mutableListOf(false,true)
+        var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
+        val TargetProb = mutableListOf(0.0,0.0,1.0)
+        assertApproxEquals(TargetProb, ProbList)
+    }
+
+    @Test
     fun draw_bow4cc() {
         val WpnList = mutableListOf(2,1)
         val WpnPow = mutableListOf(1,2)
@@ -272,10 +300,9 @@ class ProbabilityStats {
         val IsBow = mutableListOf(false,false,true)
 
         var ProbList = getProbList(WpnList,WpnPow,2,IsBow)
-        val TargetProb = mutableListOf(0.0,0.0,1/3.0,2/3.0)
+        val TargetProb = mutableListOf(0.0,1/3.0,0.0,2/3.0)
         assertApproxEquals(TargetProb, ProbList)
     }
-
 }
 
 class MergeLists {
@@ -349,7 +376,9 @@ class MergeLists {
 
 fun assertApproxEquals(ListA : MutableList<Double>, ListB : MutableList<Double>) {
     val atol = (10.0).pow(-5)
-    assertEquals(ListA.size,ListB.size)
+    if (ListA.size !=  ListB.size) {
+        assertEquals(ListA, ListB)
+    }
     Assert.assertEquals(ListA.sum(),1.0,atol)
     Assert.assertEquals(ListB.sum(),1.0,atol)
 
