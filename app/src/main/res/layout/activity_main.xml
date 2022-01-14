@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/LayoutButtons"
         android:layout_width="370dp"
         android:layout_height="300dp"
         android:layout_marginBottom="16dp"
@@ -15,146 +15,143 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.50"
         app:layout_constraintStart_toStartOf="parent">
-        <!-- Comment
-                <Button
-                    android:id="@+id/weapon1"
-                    android:layout_width="100dp"
-                    android:layout_height="50dp"
-                    android:text="@string/potato"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.2"
-                    />
 
-                <Button
-                    android:id="@+id/weapon2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/wooden_sword"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.533"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.4" />
+        <Button
+            android:id="@+id/weapon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/potato"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125" />
+
+        <Button
+            android:id="@+id/weapon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wooden_sword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.375" />
 
 
-                <Button
-                    android:id="@+id/weapon3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/stone_sword"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.495"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.6" />
+        <Button
+            android:id="@+id/weapon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stone_sword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.625" />
 
-                <Button
-                    android:id="@+id/CalculateStats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/calculate"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.144"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/weapon3"
-                    app:layout_constraintVertical_bias="0.681" />
+        <Button
+            android:id="@+id/CalculateStats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/calculate"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
 
-                <Button
-                    android:id="@+id/Reset"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="36dp"
-                    android:text="@string/reset_weapons"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="@+id/CalculateStats"
-                    app:layout_constraintStart_toEndOf="@+id/CalculateStats"
-                    app:layout_constraintTop_toTopOf="@+id/CalculateStats"
-                    app:layout_constraintVertical_bias="0.0" />
+        <Button
+            android:id="@+id/Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="@string/reset_weapons"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1" />
 
-                <Button
-                    android:id="@+id/weapon4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="24dp"
-                    android:text="@string/iron_sword"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/weapon1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.063" />
+        <Button
+            android:id="@+id/weapon4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/iron_sword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125" />
 
-                <Button
-                    android:id="@+id/weapon5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/diamond_sword"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/weapon2"
-                    app:layout_constraintTop_toTopOf="@+id/weapon4"
-                    app:layout_constraintVertical_bias="0.279" />
+        <Button
+            android:id="@+id/weapon5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diamond_sword"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.375" />
 
-                <Button
-                    android:id="@+id/weapon6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:text="@string/dynamite"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/weapon3"
-                    app:layout_constraintTop_toTopOf="@+id/weapon5"
-                    app:layout_constraintVertical_bias="0.4" />
+        <Button
+            android:id="@+id/weapon6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dynamite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.625" />
 
-                <Button
-                    android:id="@+id/weapon7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="28dp"
-                    android:text="@string/bow"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/weapon1"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.063" />
+        <Button
+            android:id="@+id/weapon7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125" />
 
-                <Button
-                    android:id="@+id/weapon8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/hoe"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/weapon2"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.325" />
+        <Button
+            android:id="@+id/weapon8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/hoe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.375" />
 
-                <Button
-                    android:id="@+id/weapon9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginBottom="100dp"
-                    android:text="@string/axe"
-                    android:textSize="@string/ButtonTextSize"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/weapon3"
-                    app:layout_constraintTop_toTopOf="@+id/weapon8"
-                    app:layout_constraintVertical_bias="0.971" />
+        <Button
+            android:id="@+id/weapon9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/axe"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias=".5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.625" />
 
-                    -->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
@@ -162,20 +159,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toTopOf="@+id/LayoutNumberWeapons"
+        app:layout_constraintEnd_toEndOf="@+id/LayoutButtons"
+        app:layout_constraintStart_toStartOf="@+id/LayoutButtons"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         tools:text="Battle stats" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/LayoutNumberWeapons"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-        app:layout_constraintEnd_toEndOf="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="@+id/constraintLayout">
+        app:layout_constraintBottom_toTopOf="@+id/LayoutButtons"
+        app:layout_constraintEnd_toEndOf="@+id/LayoutButtons"
+        app:layout_constraintStart_toStartOf="@+id/LayoutButtons">
 
         <TextView
             android:id="@+id/NoWpn1"
